@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.ben-manes.versions'
+
+version = '0.0.1'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+def defaultEncoding = 'UTF-8'
+
+mainClassName = "maildeleter.Main"
+
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
+  }
+}
+
+tasks.withType(AbstractCompile) each { it.options.encoding = defaultEncoding }
+
+tasks.withType(JavaCompile) {
+  options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+}
+
+test {
+  testLogging.showStandardStreams = true
+}
+
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.sun.mail:javax.mail:1.6.0'
+
+  compile 'org.apache.logging.log4j:log4j-api:2.8.2'
+  compile 'org.apache.logging.log4j:log4j-core:2.8.2'
+}
+
+
+
