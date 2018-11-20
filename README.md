@@ -33,7 +33,7 @@ Porting to Kotlin from Java, I copied some code from [coroutine example](https:/
    - `TRASH_FOLDER` to specify your trash folder. This may differ as your environment or language setting of gmail.
 2. Open gmail setting -> `Forwarding and POP/IMAP` (or, go to `https://mail.google.com/mail/u/0/#settings/fwdandpop`) -> change setting to `Enable IMAP`. 
 3. Go to `https://myaccount.google.com/lesssecureapps`. Next to "Access for less secure apps," select Turn on , as this document said. `https://support.google.com/accounts/answer/6010255?hl=en` (As you noticed, this application is less secure! Please use this tool at your own risk!)
-4. Configure setting in `Main.java`. Those setting relates the number of mail will be deleted by this tool. Try to find proper setting!
+4. Configure setting in `Main.kt`. Those setting relates the number of mail will be deleted by this tool. Try to find proper setting!
    - `UNIT`, how many mails will be processed in one task.
    - `NUM_OF_TASKS` , number of tasks. 
    - `THREAD_POOL_SIZE`, how many threads will be prepared to process tasks.
